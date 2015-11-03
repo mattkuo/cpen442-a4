@@ -205,7 +205,7 @@
   \end{displaymath}
 
 \subsection{Methology}
-It is first observed that the length of the hashes are 42 bytes. The most
+It was first observed that the length of the hashes are 42 bytes. The most
 credible hashing algorithm would be SHA-1 since SHA-1 hashes are 40 bytes long.
 Thus it was suspected that a salt must have been appended to the hash. In this
 case, it was assumed the first 2 bytes to be the salt since the first 2 bytes in
@@ -239,8 +239,6 @@ hash are the salt and the last 40 bytes make up the SHA-1 hash.
 
 Hashcat, a password cracker, was used to brute force the
 password\footnote{\url{https://github.com/mattkuo/cpen442-a4/blob/master/q2/q2.sh}}.
-A parameter of 120 was used for the hash-type parameter with an attack mode of
-3.
 
 \section{Problem \#3 - Plaintext Password}
 \subsection{Result}
@@ -252,6 +250,8 @@ A parameter of 120 was used for the hash-type parameter with an attack mode of
   \end{displaymath}
 
 \subsection{Methology}
+For calculating the simple entropy, the same keyspace was used as in problem \#2.
+
 IDA Pro was used to reverse engineer the plain text password. It was first
 observed that the program would automatically deny user access if the input was
 not 11 characters long. If the password was 11 characters long, the program
