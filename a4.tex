@@ -237,10 +237,10 @@ to acquire runtime length information. From this, the \texttt{user} and
 The format of the hash is the same as problem \#1. The first two bytes of the
 hash are the salt and the last 40 bytes make up the SHA-1 hash.
 
-Hashcat, a password cracker, was used to brute force the password. A parameter
-of 120 was used for the hash-type parameter with an attack mdoe of
-3\footnote{Hashcat params:
-\url{https://github.com/mattkuo/cpen442-a4/tree/master/q2}}.
+Hashcat, a password cracker, was used to brute force the
+password\footnote{\url{https://github.com/mattkuo/cpen442-a4/blob/master/q2/q2.sh}}.
+A parameter of 120 was used for the hash-type parameter with an attack mode of
+3.
 
 \section{Problem \#3 - Plaintext Password}
 \subsection{Result}
@@ -262,8 +262,8 @@ from. The hex bytes were then translated to ASCII characters.
 
 If a password is incorrect, a jump instruction causes the program to display the
 access denied section of the program. Thus to make the program accept any
-password, one could just \texttt{nop} this jump instruction\footnote{link to
-patch for \#3}.
+password, one could just \texttt{nop} this jump
+instruction\footnote{\url{https://github.com/mattkuo/cpen442-a4/blob/master/q3/program1.dif}}.
 
 \section{Problem \#4 - Encrypted Password}
 \subsection{Result}
@@ -273,16 +273,18 @@ patch for \#3}.
   \end{displaymath}
 
 \subsection{Methology}
+
 The approach used is similar to the procedure performed in problem \#3. However,
 this time the program stores a SHA-1 hash instead of the password. After copying
-the stored hash, an incremental attack using Hashcat was performed to acquire
-the password.
+the stored hash, an incremental attack using
+Hashcat\footnote{\url{https://github.com/mattkuo/cpen442-a4/blob/master/q4/q4.sh}}
+was performed to acquire the password.
 
 A patch could be created to accept any password in exactly the same way as was
-posed in problem \#3\footnote{link to patch for \#4}.
+posed in problem \#3\footnote{https://github.com/mattkuo/cpen442-a4/blob/master/q4/program2.dif}.
 
 A Python script was written to patch the binary file to accept any password the
 user wants by replacing the program's hash with a SHA-1 hash produced from user
-input\footnote{link to python for \#4}.
+input\footnote{\url{https://github.com/mattkuo/cpen442-a4/blob/master/q4/patch.py}}.
 
 \end{document}
