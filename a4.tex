@@ -157,7 +157,7 @@
 
 % *** PDF, URL AND HYPERLINK PACKAGES ***
 %
-%\usepackage{url}
+\usepackage{url}
 % url.sty was written by Donald Arseneau. It provides better support for
 % handling and breaking URLs. url.sty is already installed on most LaTeX
 % systems. The latest version and documentation can be obtained at:
@@ -166,7 +166,7 @@
 
 
 % correct bad hyphenation here
-\usepackage{biblatex}
+% \usepackage{biblatex}
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \bibliography{a2.bib}
@@ -211,11 +211,12 @@ Thus it was suspected that a salt must have been appended to the hash. In this
 case, it was assumed the first 2 bytes to be the salt since the first 2 bytes in
 some of the hashes have altering cases.
 
-A Python script\footnote{python script} was created that generated SHA-1 hash
-values of the strings 0000 to 9999 prepended with the salt. The unix command
-line function \texttt{time} was used to acquire runtime length information. From
-this, the \texttt{user} and \texttt{sys} time were summed to get the total CPU
-time.
+A Python
+script\footnote{\url{https://github.com/mattkuo/cpen442-a4/blob/master/q1/q1.py}}
+was created that generated SHA-1 hash values of the strings 0000 to 9999
+prepended with the salt. The unix command line function \texttt{time} was used
+to acquire runtime length information. From this, the \texttt{user} and
+\texttt{sys} time were summed to get the total CPU time.
 
 
 \section{Problem \#2 - 6 Character Password}
@@ -238,7 +239,8 @@ hash are the salt and the last 40 bytes make up the SHA-1 hash.
 
 Hashcat, a password cracker, was used to brute force the password. A parameter
 of 120 was used for the hash-type parameter with an attack mdoe of
-3\footnote{Insert q2 hashcat config}.
+3\footnote{Hashcat params:
+\url{https://github.com/mattkuo/cpen442-a4/tree/master/q2}}.
 
 \section{Problem \#3 - Plaintext Password}
 \subsection{Result}
